@@ -31,6 +31,8 @@ gem 'devise'
 gem 'binding_of_caller'
 gem 'better_errors'
 
+gem 'bootstrap-sass'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

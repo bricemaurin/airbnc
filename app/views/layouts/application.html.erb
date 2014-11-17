@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Airbnc</title>
+  <title>Airdmc</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,9 +9,13 @@
 <body>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-  <%= render 'layouts/sessions' %>
+
 
 <%= yield %>
 
+<%= render 'layouts/sessions' %>
+
 </body>
 </html>
+
+

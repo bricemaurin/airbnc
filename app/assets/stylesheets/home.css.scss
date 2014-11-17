@@ -1,0 +1,23 @@
+.banner{
+  background: url("/assets/airbnb-treehouse-3.png") no-repeat center center;
+  background-size: cover;
+  height: 500px;
+  padding-top: 0;
+  padding-bottom: 200px
+}
+
+.banner h1{
+  color: white;
+  font-size: 90px;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.banner p{
+  font-size: 25px;
+  color: white;
+  width: 600px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 2px;
+}
+
