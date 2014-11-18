@@ -56,7 +56,7 @@
     <%= f.text_field :guest_number, class: "form-control" %>
   </div>
 
-  <%= fields_for @flat_picture do |picture| %>
+  <%= f.fields_for :flat_pictures do |picture| %>
     <div class="field form-group">
       <%= picture.label :url %>
       <%= picture.file_field :url %>

@@ -11,7 +11,8 @@ class FlatsController < ApplicationController
 
   def new
     @flat = Flat.new
-    @flat_picture = FlatPicture.new
+    2.times { @flat.flat_pictures.build }
+    # @flat_picture = FlatPicture.new
   end
 
   def create
@@ -42,7 +43,7 @@ class FlatsController < ApplicationController
 
 private
   def flat_params
-    params.require(:flat).permit(:title, :description, :address, :zipcode, :city, :price, :room_number, :bed_number, :guest_number, flat_picture: [:url])
+    params.require(:flat).permit(:title, :description, :address, :zipcode, :city, :price, :room_number, :bed_number, :guest_number, flat_pictures_attributes: [:url])
   end
 
   def set_flat
