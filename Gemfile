@@ -37,7 +37,10 @@ gem 'better_errors'
 gem "font-awesome-rails"
 gem 'bootstrap-sass', '~> 3.3.0'
 
+gem 'google-webfonts'
+
 gem 'faker'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
