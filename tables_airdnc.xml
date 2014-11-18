@@ -53,7 +53,7 @@
 <row name="introduction" null="1" autoincrement="0">
 <datatype>TINYINT</datatype>
 <default>NULL</default></row>
-<row name="photo" null="1" autoincrement="0">
+<row name="profile_picture" null="1" autoincrement="0">
 <datatype>TINYINT</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
@@ -124,5 +124,19 @@
 <part>id</part>
 </key>
 </table>
+<table x="864" y="164" name="flat_pictures">
+<row name="id" null="1" autoincrement="1">
+<datatype>TINYINT</datatype>
+<default>NULL</default></row>
+<row name="url" null="1" autoincrement="0">
+<datatype>TINYINT</datatype>
+<default>NULL</default></row>
+<row name="flat_id" null="1" autoincrement="0">
+<datatype>TINYINT</datatype>
+<default>NULL</default><relation table="flats" row="id" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
 </sql>
-
