@@ -4,7 +4,7 @@ class FlatPicture < ActiveRecord::Base
   has_attached_file :url,
     styles: { full: "1400x800>", banner: "1400x550#>", list: "400x250#>" }
 
-  validates_attachment_content_type :photo,
+  validates_attachment_content_type :url,
     content_type: /\Aimage\/.*\z/
 
 end
