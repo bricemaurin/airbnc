@@ -49,3 +49,7 @@ gem 'faker'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'figaro'
+
+gem 'aws-sdk'
+gem 'paperclip'
