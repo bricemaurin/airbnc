@@ -44,3 +44,7 @@ gem 'better_errors'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'figaro'
+
+gem 'aws-sdk'
+gem 'paperclip'
