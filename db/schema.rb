@@ -11,21 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118144508) do
-
+ActiveRecord::Schema.define(version: 20141118154226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "flat_pictures", force: true do |t|
-    t.string   "url"
+    t.string   "photo"
     t.integer  "flat_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "url_file_name"
-    t.string   "url_content_type"
-    t.integer  "url_file_size"
-    t.datetime "url_updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   add_index "flat_pictures", ["flat_id"], name: "index_flat_pictures_on_flat_id", using: :btree

@@ -1,0 +1,69 @@
+<%= form_for(@flat, html: { multipart: true }) do |f| %>
+  <% if @flat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@flat.errors.count, "error") %> prohibited this flat from being saved:</h2>
+
+      <ul>
+      <% @flat.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, class: "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :address %><br>
+    <%= f.text_field :address, class: "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :zipcode %><br>
+    <%= f.text_field :zipcode, class: "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :city %><br>
+    <%= f.text_field :city, class: "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :price %><br>
+    <%= f.text_field :price, class: "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :room_number %><br>
+    <%= f.text_field :room_number, class: "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :bed_number %><br>
+    <%= f.text_field :bed_number, class: "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :guest_number %><br>
+    <%= f.text_field :guest_number, class: "form-control" %>
+  </div>
+
+  <%= f.fields_for :flat_pictures do |picture| %>
+    <div class="field form-group">
+      <%= picture.label :photo %>
+      <%= picture.file_field :photo %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit class: 'btn btn-info' %>
+  </div>
+<% end %>
