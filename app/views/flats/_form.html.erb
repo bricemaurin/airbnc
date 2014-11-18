@@ -27,13 +27,34 @@
   </div>
 
   <div class="field form-group">
+    <%= f.label :city %><br>
+    <%= f.text_field :city, class: "form-control" %>
+  </div>
+
+  <div class="field form-group">
     <%= f.label :zipcode %><br>
     <%= f.text_field :zipcode, class: "form-control" %>
   </div>
 
-  <div class="field form-group">
-    <%= f.label :city %><br>
-    <%= f.text_field :city, class: "form-control" %>
+  <div class="col-xs-4">
+    <div class="field form-group">
+      <%= f.label :room_number %>
+      <%= f.select :room_number, options_for_select((1..10).to_a), class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="col-xs-4">
+    <div class="field form-group">
+      <%= f.label :bed_number %>
+      <%= f.select :bed_number, options_for_select((1..10).to_a), class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="col-xs-4">
+    <div class="field form-group">
+      <%= f.label :guest_number %>
+      <%= f.select :guest_number, options_for_select((1..10).to_a), class: "form-control" %>
+    </div>
   </div>
 
   <div class="field form-group">
@@ -41,24 +62,9 @@
     <%= f.text_field :price, class: "form-control" %>
   </div>
 
-  <div class="field form-group">
-    <%= f.label :room_number %><br>
-    <%= f.text_field :room_number, class: "form-control" %>
-  </div>
-
-  <div class="field form-group">
-    <%= f.label :bed_number %><br>
-    <%= f.text_field :bed_number, class: "form-control" %>
-  </div>
-
-  <div class="field form-group">
-    <%= f.label :guest_number %><br>
-    <%= f.text_field :guest_number, class: "form-control" %>
-  </div>
-
+  <label>Photos</label>
   <%= f.fields_for :flat_pictures do |picture| %>
     <div class="field form-group">
-      <%= picture.label :photo %>
       <%= picture.file_field :photo %>
     </div>
   <% end %>
