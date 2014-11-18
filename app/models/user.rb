@@ -4,10 +4,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_attached_file :photo,
+  has_attached_file :profile_picture,
     styles: { profile: "200x200#>", flat: "90x90#>", list: "60x60#>", nav: "30x30#>" }
 
-  validates_attachment_content_type :photo,
+  validates_attachment_content_type :profile_picture,
     content_type: /\Aimage\/.*\z/
 
   has_many :flats
