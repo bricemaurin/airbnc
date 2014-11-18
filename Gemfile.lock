@@ -56,6 +56,10 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.2.2)
+    font-awesome-rails (4.2.0.0)
+      railties (>= 3.2, < 5.0)
+    google-webfonts (0.2.0)
+      actionpack (>= 3.0.0)
     hike (1.2.3)
     i18n (0.6.11)
     jbuilder (2.2.5)
@@ -133,9 +137,11 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
-  bootstrap-sass
+  bootstrap-sass (~> 3.3.0)
   coffee-rails (~> 4.0.0)
   devise
+  font-awesome-rails
+  google-webfonts
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.1.7)

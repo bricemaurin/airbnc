@@ -1,6 +1,10 @@
 .navbar-transparent{
   background: transparent;
   border: none;
+  z-index: 1000;
+  top: 20px;
+  width: 100%;
+  position: relative;
 }
 
 .navbar-transparent .navbar-nav > li > a,
@@ -28,4 +32,10 @@
   border-radius: 0;
   margin-top: 20px;
   line-height: 10px;
+}
+
+.navbar-right li {
+  font-family: 'open sans';
+  font-size: 16px;
+  font-weight: 400;
 }

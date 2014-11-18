@@ -2,9 +2,11 @@
 <html>
 <head>
   <title>Airdmc</title>
+  <%= google_webfonts_link_tag :Open_Sans => [300, 400, 600, 700] %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
   <p class="notice"><%= notice %></p>
@@ -13,7 +15,7 @@
 
 <%= yield %>
 
-<%= render 'layouts/sessions' %>
+
 
 </body>
 </html>
