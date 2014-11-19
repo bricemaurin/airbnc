@@ -1,3 +1,24 @@
-#signup{
-  display: none;
+$btn-bg: #E1222D;
+$btn-color: white;
+$btn-horizontal-padding: 10px;
+
+.btn-signin {
+  line-height: 40px;
+  padding: 0 $btn-horizontal-padding;
+  color: $btn-color;
+  border-radius: 4px;
+  margin-top: $btn-margin-top;
+  border-radius: 2px;
+  font-weight: normal;
+  background-color: $btn-bg;
+  border-top: $btn-top-border-width solid $btn-top-border-color;
+  border-right: $btn-right-border-width solid $btn-right-border-color;
+  border-bottom: $btn-bottom-border-width solid $btn-bottom-border-color;
+  border-left: $btn-left-border-width solid $btn-left-border-color;
+  font-size: 20px;
 }
+
+.btn-signin:hover{
+  color: white;
+}
+
