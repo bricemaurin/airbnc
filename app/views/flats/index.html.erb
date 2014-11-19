@@ -1,14 +1,20 @@
-<h1>Flats#index</h1>
-<p>Find me in app/views/flats/index.html.erb</p>
+<%= render 'layouts/navbartrans' %>
+
+<div class="list-title">
+  <p>Discover inspiring places</p>
+</div>
 
 
 <div class="flats">
   <div class="container">
     <div class="row">
+
       <% @flats.each do |flat| %>
+
         <div class="listing">
-            <div class="col-md-6">
+            <div class="col-sm-6 col-md-4 listing-max">
               <%= link_to (image_tag flat.flat_pictures.first.photo(:list), class: "image-flat"), flat %>
+
               <div class="detail-flat">
                 <div class="row">
                     <div class="col-md-12 title-flat-list">
@@ -20,12 +26,14 @@
                     <div class="col-md-6 price-flat-list text-right">
                       <%= link_to flat.price, flat %>
                     </div>
-                    </div>
+                  </div>
                 </div>
+
               </div>
             </div>
-        </div>
+
       <% end %>
+
     </div>
   </div>
 </div>
