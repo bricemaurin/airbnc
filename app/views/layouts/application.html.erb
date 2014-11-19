@@ -10,17 +10,19 @@
 
 </head>
 <body>
+
+  <%= render partial: "shared/navbar" %>
+
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-<%= render 'layouts/navbartrans' %>
+  <div id="wrapper">
 
-<div id="wrapper">
+    <%= yield %>
 
-<%= yield %>
+  </div>
 
-</div>
-<%= render 'layouts/footer' %>
+  <%= render partial: "shared/footer" %>
 
 </body>
 </html>
