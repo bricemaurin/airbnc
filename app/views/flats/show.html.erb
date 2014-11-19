@@ -1,2 +1,81 @@
-<h1>Flats#show</h1>
-<p>Find me in app/views/flats/show.html.erb</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <% if @flat.flat_pictures.first.photo(:banner) %>
+        <%= image_tag(@flat.flat_pictures.first.photo(:banner)) %>
+      <% else %>
+        <%= link_to image_tag("http://placehold.it/1450x250/95a5a6/ecf0f1&text=click+to+add+an+image"), edit_flat_path %>
+      <% end %>
+      <div class="price text-right">
+        <%= @flat.price %>€ par nuit
+      </div>
+    </div>
+  </div>
+
+<div class="container">
+    <div class="col-xs-3">
+        <div class="user">
+          <%= image_tag "http://placehold.it/200x200", alt:"AJOUTER UNE BALISE ALT" %><br>
+          <span class="username"><%= @flat.user.email %></span>
+        </div>
+      </div>
+
+    <div class="col-xs-7">
+      <div class="row">
+        <h1>
+          <%= @flat.title %><br>
+          <small>
+            <%= @flat.address %>, <%= @flat.zipcode %> <%= @flat.city %>
+          </small>
+        </h1>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <div class="guests">
+            <%= image_tag "http://placehold.it/60x60", alt:"AJOUTER UNE BALISE ALT" %><br>
+            <%= @flat.guest_number %> guests
+          </div>
+        </div>
+        <div class="col-xs-4">
+          <div class="guests">
+            <%= image_tag "http://placehold.it/60x60", alt:"AJOUTER UNE BALISE ALT" %><br>
+            <%= @flat.bed_number %> rooms
+          </div>
+        </div>
+        <div class="col-xs-4">
+          <div class="guests">
+            <%= image_tag "http://placehold.it/60x60", alt:"AJOUTER UNE BALISE ALT" %><br>
+            <%= @flat.room_number %> beds
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>flat description</h2>
+            <%= @flat.description %>
+        </div>
+      </div>
+
+      <% if @flat.flat_pictures.count > 1 %>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="second-image">
+              <%= image_tag(@flat.flat_pictures.second.photo(:banner)) %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+
+    <div class="col-xs-2">
+      <a href="#" class="btn btn-danger">RESERVER</a>
+    </div>
+  </div>
+</div>
