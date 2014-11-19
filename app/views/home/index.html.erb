@@ -9,32 +9,40 @@
           <%= link_to 'Browse flats', flats_path, class: "btn-home" %>
         </div>
       </div>
-     </div>
     </div>
   </div>
+</div>
 </div>
 
 <div class="last_flats_home text-center">
   <p>Discover inspiring places</p>
 </div>
 
-<div class="feature text-center">
-  <div class="row">
-    <div class="col-xs-12 col-md-4">
-      <div>
-        <%= image_tag("photo_home_1.jpg") %>
-      </div>
+
+<div class="container home-listing">
+  <% @flats.each do |flat| %>
+    <div class="col-sm-6 col-md-4 listing-max">
+      <%= link_to (image_tag flat.flat_pictures.first.photo(:list), class: "image-flat"), flat %>
     </div>
-    <div class="col-xs-12 col-md-4">
-      <div>
-        <%= image_tag("photo_home_2.jpg") %>
-      </div>
-    </div>
-    <div class="col-xs-12 col-md-4">
-      <div>
-        <%= image_tag("photo_home_3.jpg") %>
-      </div>
-    </div>
-    </div>
-  </div>
+  <% end %>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
