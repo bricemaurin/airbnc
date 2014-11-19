@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Airdmc</title>
+  <title>AIRDMC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= google_webfonts_link_tag :Open_Sans => [300, 400, 600, 700] %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -9,13 +10,19 @@
 
 </head>
 <body>
+
+  <%= render partial: "shared/navbar" %>
+
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
+  <div id="wrapper">
 
-<%= yield %>
+    <%= yield %>
 
+  </div>
 
+  <%= render partial: "shared/footer" %>
 
 </body>
 </html>
