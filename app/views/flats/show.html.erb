@@ -73,7 +73,7 @@
     </div>
 
     <div class="col-xs-2 book">
-      <a href="#" class="btn-dmc">BOOK NOW</a>
+      <%= link_to "BOOK NOW", new_flat_booking_path(@flat), class:"btn-dmc" %>
       <div class="price">
         <%= @flat.price %>€ par nuit
       </div>

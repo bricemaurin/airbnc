@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:edit, :update, :destroy]
-  before_action :set_flat, only [:new, :edit, :update, :destroy]
+  before_action :set_flat, only: [:new, :edit, :create, :update, :destroy]
   before_action :authenticate_user!
 
   def index
@@ -47,7 +47,7 @@ private
   end
 
   def set_flat
-    @flat = Flat.find(params[:flat_id]
+    @flat = Flat.find(params[:flat_id])
   end
 
 end
