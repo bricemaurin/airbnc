@@ -12,7 +12,6 @@ class FlatsController < ApplicationController
   def new
     @flat = Flat.new
     2.times { @flat.flat_pictures.build }
-    # @flat_picture = FlatPicture.new
   end
 
   def create
