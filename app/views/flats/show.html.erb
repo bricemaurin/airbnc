@@ -1,7 +1,11 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12">
-      <%= image_tag(@flat.flat_pictures.first.photo(:banner)) %>
+      <% if @flat.flat_pictures.first.photo(:banner) %>
+        <%= image_tag(@flat.flat_pictures.first.photo(:banner)) %>
+      <% else %>
+        <%= link_to image_tag("http://placehold.it/1450x250/95a5a6/ecf0f1&text=click+to+add+an+image"), edit_flat_path %>
+      <% end %>
       <div class="price text-right">
         <%= @flat.price %>€ par nuit
       </div>
