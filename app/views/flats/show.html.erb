@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid full-image">
   <div class="row">
     <div class="col-xs-12">
       <% if @flat.flat_pictures.first.photo(:banner) %>
@@ -11,12 +11,13 @@
       </div>
     </div>
   </div>
+</div>
 
-<div class="container">
+<div class="container description">
     <div class="col-xs-3">
         <div class="user">
-          <%= image_tag "http://placehold.it/200x200", alt:"AJOUTER UNE BALISE ALT" %><br>
-          <span class="username"><%= @flat.user.email %></span>
+          <%= image_tag "http://api.randomuser.me/portraits/men/3.jpg", alt:"AJOUTER UNE BALISE ALT" %><br>
+          <div class="username"><%= @flat.user.email %></div>
         </div>
       </div>
 
@@ -35,19 +36,19 @@
       <div class="row">
         <div class="col-xs-4">
           <div class="guests">
-            <%= image_tag "http://placehold.it/60x60", alt:"AJOUTER UNE BALISE ALT" %><br>
+            <%= image_tag "people.png", alt:"AJOUTER UNE BALISE ALT" %><br>
             <%= @flat.guest_number %> guests
           </div>
         </div>
         <div class="col-xs-4">
-          <div class="guests">
-            <%= image_tag "http://placehold.it/60x60", alt:"AJOUTER UNE BALISE ALT" %><br>
+          <div class="rooms">
+            <%= image_tag "rooms.png", alt:"AJOUTER UNE BALISE ALT" %><br>
             <%= @flat.bed_number %> rooms
           </div>
         </div>
         <div class="col-xs-4">
-          <div class="guests">
-            <%= image_tag "http://placehold.it/60x60", alt:"AJOUTER UNE BALISE ALT" %><br>
+          <div class="beds">
+            <%= image_tag "beds.png", alt:"AJOUTER UNE BALISE ALT" %><br>
             <%= @flat.room_number %> beds
           </div>
         </div>
@@ -78,4 +79,3 @@
       <a href="#" class="btn btn-danger">RESERVER</a>
     </div>
   </div>
-</div>
