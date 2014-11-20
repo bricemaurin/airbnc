@@ -53,5 +53,4 @@ gem 'aws-sdk'
 gem 'paperclip'
 
 gem "geocoder"
-
 gem 'letter_opener', group: :development
