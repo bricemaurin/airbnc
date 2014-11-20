@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
     content_type: /\Aimage\/.*\z/
 
   has_many :flats
-
+  has_many :bookings, dependent: :destroy
 
   def self.find_for_facebook_oauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

@@ -12,20 +12,19 @@
     lastname: Faker::Name.last_name,
     email: Faker::Internet.email,
     password: Faker::Internet.password,
-    introduction:Faker::Lorem.paragraph
+    introduction:Faker::Lorem.paragraph,
+    picture:("http://placehold.it/400x400")
     )
 
   user.flats.create!(
     title: Faker::Lorem.sentence,
     description: Faker::Lorem.paragraph,
     address: Faker::Address.street_address,
-    zipcode: Faker::Address.zip_code,
     city: Faker::Address.city,
     price: Faker::Number.number(2),
     room_number: Faker::Number.digit,
     bed_number: Faker::Number.digit,
     guest_number: Faker::Number.digit
     )
-
 end
 

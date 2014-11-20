@@ -1,0 +1,21 @@
+<%= form_for [@flat, @booking] do |f| %>
+  <% if @booking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+
+      <ul>
+      <% @booking.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= f.label :number_of_day, "How many days? " %>
+    <%= f.select :number_of_day, options_for_select((1..30).to_a) , class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: 'btn btn-info' %> <span class="total text-right"></span>
+  </div>
+<% end %>
