@@ -16,19 +16,6 @@ ActiveRecord::Schema.define(version: 20141120155431) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "bookings", force: true do |t|
-    t.integer  "price"
-    t.boolean  "status"
-    t.integer  "user_id"
-    t.integer  "flat_id"
-    t.integer  "number_of_day"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "bookings", ["flat_id"], name: "index_bookings_on_flat_id", using: :btree
-  add_index "bookings", ["user_id"], name: "index_bookings_on_user_id", using: :btree
-
   create_table "flat_pictures", force: true do |t|
     t.string   "photo"
     t.integer  "flat_id"

@@ -44,6 +44,17 @@ Rails.application.configure do
   # Set to :debug to see everything in the log.
   config.log_level = :info
 
+  ActionMailer::Base.smtp_settings = {
+    :port =>           '587',
+    :address =>        'smtp.mandrillapp.com',
+    :user_name =>      ENV['MANDRILL_USERNAME'],
+    :password =>       ENV['MANDRILL_APIKEY'],
+    :domain =>         'heroku.com',
+    :authentication => :plain
+  }
+
+  ActionMailer::Base.delivery_method = :smtp
+
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 
