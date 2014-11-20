@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118154226) do
+ActiveRecord::Schema.define(version: 20141120170608) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: true do |t|
+    t.integer  "price"
+    t.boolean  "status"
+    t.integer  "user_id"
+    t.integer  "flat_id"
+    t.integer  "number_of_day"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bookings", ["flat_id"], name: "index_bookings_on_flat_id", using: :btree
+  add_index "bookings", ["user_id"], name: "index_bookings_on_user_id", using: :btree
 
   create_table "flat_pictures", force: true do |t|
     t.string   "photo"
@@ -33,7 +46,6 @@ ActiveRecord::Schema.define(version: 20141118154226) do
     t.string   "title"
     t.text     "description"
     t.string   "address"
-    t.string   "zipcode"
     t.string   "city"
     t.integer  "price"
     t.integer  "room_number"
@@ -42,6 +54,8 @@ ActiveRecord::Schema.define(version: 20141118154226) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "flats", ["user_id"], name: "index_flats_on_user_id", using: :btree

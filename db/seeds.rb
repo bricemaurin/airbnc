@@ -19,7 +19,6 @@
     title: Faker::Lorem.sentence,
     description: Faker::Lorem.paragraph,
     address: Faker::Address.street_address,
-    zipcode: Faker::Address.zip_code,
     city: Faker::Address.city,
     price: Faker::Number.number(2),
     room_number: Faker::Number.digit,
