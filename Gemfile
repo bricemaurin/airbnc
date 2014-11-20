@@ -62,3 +62,5 @@ gem 'figaro'
 
 gem 'aws-sdk'
 gem 'paperclip'
+
+gem "geocoder"
