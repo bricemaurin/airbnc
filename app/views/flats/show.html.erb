@@ -1,19 +1,16 @@
 <div class="container-fluid full-image">
   <div class="row">
     <div class="col-xs-12">
-      <% if @flat.flat_pictures.first.photo(:banner) %>
+      <% if @flat.flat_pictures.first %>
         <%= image_tag(@flat.flat_pictures.first.photo(:banner)) %>
       <% else %>
         <%= link_to image_tag("http://placehold.it/1450x250/95a5a6/ecf0f1&text=click+to+add+an+image"), edit_flat_path %>
       <% end %>
-      <div class="price text-right">
-        <%= @flat.price %>€ par nuit
-      </div>
     </div>
   </div>
 </div>
 
-<div class="container description">
+<div class="container">
     <div class="col-xs-3">
         <div class="user">
           <%= image_tag "http://api.randomuser.me/portraits/men/3.jpg", alt:"AJOUTER UNE BALISE ALT" %><br>
@@ -22,7 +19,7 @@
       </div>
 
     <div class="col-xs-7">
-      <div class="row">
+      <div class="row flat-desc">
         <h1>
           <%= @flat.title %><br>
           <small>
@@ -75,7 +72,10 @@
 
     </div>
 
-    <div class="col-xs-2">
-      <a href="#" class="btn btn-danger">RESERVER</a>
+    <div class="col-xs-2 book">
+      <a href="#" class="btn-dmc">BOOK NOW</a>
+      <div class="price">
+        <%= @flat.price %>€ par nuit
+      </div>
     </div>
   </div>

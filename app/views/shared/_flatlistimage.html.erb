@@ -1,0 +1,7 @@
+<% if flat.flat_pictures.first %>
+  <%= link_to (image_tag flat.flat_pictures.first.photo(:list), class: "image-flat"), flat %>
+<% else %>
+  <%= link_to flat do %>
+    <%= image_tag "http://placehold.it/400x250/95a5a6/ecf0f1", class: "image-flat" %>
+  <% end %>
+<% end %>

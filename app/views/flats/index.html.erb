@@ -9,8 +9,7 @@
 
         <div class="listing">
             <div class="col-sm-6 col-md-4 listing-max">
-              <%= link_to (image_tag flat.flat_pictures.first.photo(:list), class: "image-flat"), flat %>
-
+              <%= render "shared/flatlistimage", flat: flat %>
               <div class="detail-flat">
                 <div class="row">
                     <div class="col-md-12 title-flat-list">
@@ -33,3 +32,5 @@
     </div>
   </div>
 </div>
+
+

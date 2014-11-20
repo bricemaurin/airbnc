@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.1.2'
+gem 'rails_12factor', group: :production
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
@@ -42,6 +44,8 @@ gem 'bootstrap-sass', '~> 3.3.0'
 gem 'google-webfonts'
 
 gem 'faker'
+
+gem 'bootstrap_form'
 
 gem 'figaro'
 

@@ -1,3 +1,7 @@
+/*
+ *= require rails_bootstrap_forms
+ */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
@@ -24,6 +28,9 @@
 .user > img {
   width: 100%;
   height: 100%;
+  border-bottom: 20px solid #e1222d;
+  border-top: 20px solid #e1222d;
+  margin-top: -100px;
 }
 
 .username {
@@ -31,19 +38,53 @@
 }
 
 .price {
-  margin: -40px 100px;
-  background: black;
-  color: white;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  width: auto;
-  z-index: 10000000;
-  padding: 10px;
-  font-weight: 700;
-  position: absolute;
-  right: 0px;
+  margin: 10px;
 }
 
 .description {
   margin-top: 30px;
+}
+
+.btn-dmc {
+  border-bottom: 5px solid #e1222d;
+  border-top: 5px solid #e1222d;
+  border-left: 1px solid #e1222d;
+  border-right: 1px solid #e1222d;
+  border-radius: 0px;
+  background: #FFF;
+  color: black;
+  padding: 10px;
+  display: block;
+  text-align: center;
+}
+
+.btn-dmc:hover {
+  border-bottom: 5px solid #e1222d;
+  border-top: 5px solid #e1222d;
+  border-left: 1px solid #e1222d;
+  border-right: 1px solid #e1222d;
+  background: black;
+  color: white;
+}
+
+
+.flat-desc {
+  margin-left: 30px;
+}
+
+.book {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.btn-home {
+  background: #e1222d;
+  color: white !important;
+  border-radius: 2px;
+  margin: 20px;
+  padding: 15px;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
 }
