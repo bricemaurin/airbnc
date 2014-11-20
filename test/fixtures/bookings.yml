@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  price: 1
+  status: false
+  user_id: 
+  flat_id: 
+  number_of_day: 1
+
+two:
+  price: 1
+  status: false
+  user_id: 
+  flat_id: 
+  number_of_day: 1

@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <h1>You are about to edit...</h1>
+    </div>
+    <div class="col-xs-2 col-xs-offset-2 flatbooking">
+      <%= image_tag @flat.flat_pictures.first.photo(:list) %>
+    </div>
+    <div class="col-xs-6">
+      <h2><%= @flat.title %></h2>
+      <h3>in <%= @flat.address %>, <%= @flat.zipcode %> <%= @flat.city %></h3>
+      <div>
+        <span class="pricetag"><span class="price"><%= @flat.price %></span>€ /day</span>
+      </div>
+      <%= render "form" %>
+    </div>
+  </div>
+</div>

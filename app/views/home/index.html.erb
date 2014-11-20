@@ -19,31 +19,11 @@
 </div>
 
 <div class="container home-listing">
- <% if @flats %>
-   <% @flats.each do |flat| %>
-     <div class="col-sm-6 col-md-4 listing-max">
-       <%= render "shared/flatlistimage", flat: flat %>
-     </div>
-   <% end %>
- <% end %>
+  <% if @flats %>
+    <% @flats.each do |flat| %>
+      <div class="col-sm-6 col-md-4 listing-max">
+        <%= render "shared/flatlistimage", flat: flat %>
+      </div>
+    <% end %>
+  <% end %>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

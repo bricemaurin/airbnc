@@ -12,7 +12,8 @@
     lastname: Faker::Name.last_name,
     email: Faker::Internet.email,
     password: Faker::Internet.password,
-    introduction:Faker::Lorem.paragraph
+    introduction:Faker::Lorem.paragraph,
+    picture:("http://placehold.it/400x400")
     )
 
   user.flats.create!(
@@ -25,6 +26,5 @@
     bed_number: Faker::Number.digit,
     guest_number: Faker::Number.digit
     )
-
 end
 
