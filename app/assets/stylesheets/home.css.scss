@@ -1,6 +1,6 @@
-
 .wrapper {
-  background-image: asset-url("airbnb-treehouse-3.png");
+  // background-image: asset-url("airbnb-treehouse-3.png");
+  background-image: asset-url("banner.jpg");
   background-attachment: fixed;
   height: 550px;
   background-size: cover;
@@ -13,11 +13,12 @@
 
 .banner h1 {
   font-size: 72px;
-  text-shadow: 0 0 20px rgba(0, 0, 0, .8);
-  font-weight: normal;
+  text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);
+  font-weight: 600;
 }
 
-.banner p {
+.banner h2 {
+  text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);
   font-size: 30px;
 }
 
@@ -27,7 +28,6 @@
 }
 
 .last_flats_home {
-  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   font-size: 32px;
   padding-top: 50px;

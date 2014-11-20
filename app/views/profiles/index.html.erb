@@ -1,8 +1,8 @@
 <div class="container">
   <div class="col-xs-2">
     <div class="img-fit">
-      <%= image_tag @user.profile_picture_file_name %><br>
-      <div class="username"></div>
+      <%= image_tag @user.profile_picture %><br>
+      <div class="edit-profile text-center"><%= link_to "edit profile", edit_user_registration_path, class:"btn btn-default" %></div>
     </div>
   </div>
 
@@ -12,23 +12,25 @@
     </h1>
 
     <hr>
+    <p><%= @user.introduction %></p>
 
     <% if @user.bookings.count > 0 %>
       <h2>My Bookings</h2>
     <% end %>
-
     <% @user.bookings.each do |booking| %>
       <div class="row booking-details">
         <div class="col-xs-4 img-fit">
           <% if booking.flat.flat_pictures %>
-            <%= image_tag(booking.flat.flat_pictures.first.photo(:list)) %>
+            <%= link_to image_tag(booking.flat.flat_pictures.first.photo(:list)), flat_path(booking.flat.id) %>
           <% else %>
-            <%= image_tag "http://placehold.it/250x250/95a5a6/ecf0f1&text=no+image" %>
+            <%= image_tag current_user.profile_picture.url %>
           <% end %>
         </div>
         <div class="col-xs-8 booking-details">
-          <h3><%= booking.flat.title %></h3>
-          <%= booking.flat.address %>, <%= booking.flat.zipcode %>, <%= booking.flat.city %> <br>
+          <h3>
+            <%= link_to booking.flat.title, flat_path(booking.flat.id) %>
+          </h3>
+          <%= booking.flat.address %><br>
           Number of days : <%= booking.number_of_day %> <br>
           <%= link_to "Edit Booking", edit_flat_booking_path(booking.flat.id, booking.id), class:"edit-booking-btn" %>
         </div>
@@ -43,14 +45,14 @@
       <div class="row booking-details">
         <div class="col-xs-4 img-fit">
           <% if flat.flat_pictures %>
-            <%= image_tag(flat.flat_pictures.first.photo(:list)) %>
+            <%= link_to image_tag(flat.flat_pictures.first.photo(:list)), flat_path(flat.id) %>
           <% else %>
             <%= image_tag "http://placehold.it/250x250/95a5a6/ecf0f1&text=no+image" %>
           <% end %>
         </div>
         <div class="col-xs-8 booking-details">
           <h3><%= flat.title %></h3>
-          <%= flat.address %>, <%= flat.zipcode %>, <%= flat.city %> <br>
+          <%= flat.address %><br>
           <% if flat.bookings.count > 0 %>
             <h4>Bookings</h4>
             <% flat.bookings.each do |booking| %>

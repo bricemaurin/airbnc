@@ -19,6 +19,28 @@ $btn-horizontal-padding: 10px;
 }
 
 .btn-signin:hover{
+  color: #f7f7f7;
+}
+
+.facebook-login {
+  background-color: #3b5998;
+  border-radius: 2px;
+  margin: 10px 0;
+}
+
+.facebook-login:before {
+  font-family: FontAwesome;
+  content: "\f09a    ";
+}
+
+a.facebook-login {
   color: white;
 }
 
+a.facebook-login:hover {
+  color:#dfe3ee;
+}
+
+.signin-or {
+  margin: 20px;
+}

@@ -1,0 +1,7 @@
+<%- if devise_mapping.omniauthable? %>
+  <%- resource_class.omniauth_providers.each do |provider| %>
+    <%= link_to "Connect with Facebook", omniauth_authorize_path(resource_name, provider), class:"facebook-login btn-block btn btn-lg" %>
+  <% end -%>
+<% end -%>
+
+<div class="text-center signin-or">or sign up by email</div>

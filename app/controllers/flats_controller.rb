@@ -4,6 +4,11 @@ class FlatsController < ApplicationController
 
   def index
     @flats = Flat.all
+
+    @markers = Gmaps4rails.build_markers(@flats) do |flat, marker|
+      marker.lat flat.latitude
+      marker.lng flat.longitude
+    end
   end
 
   def show

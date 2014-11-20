@@ -12,6 +12,10 @@
 @import "footer";
 
 
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
 .second-image > img{
   width: 100%;
   height: 100%;
@@ -36,6 +40,8 @@
 
 .username {
   margin: 20px;
+  font-weight: 700;
+  font-size: 18px;
 }
 
 .description {
@@ -70,8 +76,12 @@
 }
 
 .book {
-  margin-top: 40px;
+  margin-top: 10px;
   text-align: center;
+}
+
+.book > a {
+  color: black;
 }
 
 .btn-home {
@@ -107,11 +117,19 @@
   font-size: 18px;
 }
 
-.img-fit > img {
+.img-fit > img, .img-fit > a > img {
   width: 100%;
   height: 100%;
 }
 
 .booking-details {
   margin-bottom: 10px;
+}
+
+.edit-profile {
+  margin: 10px 0;
+}
+
+.price {
+  margin-top: 10px;
 }
