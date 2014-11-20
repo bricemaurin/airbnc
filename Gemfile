@@ -52,8 +52,5 @@ gem 'figaro'
 gem 'aws-sdk'
 gem 'paperclip'
 
-<<<<<<< HEAD
 gem "geocoder"
-=======
 gem 'letter_opener', group: :development
->>>>>>> ace0f4ad17cebd305c02d88be62960e825bedc38
