@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [ :facebook ]
 
   has_attached_file :profile_picture,
-    styles: { profile: "200x200>", flat: "90x90>", list: "60x60>", nav: "30x30>" }
+    styles: { profile: "200x200#", flat: "90x90#", list: "60x60#", nav: "30x30#" }, :default_url => "http://placehold.it/200&text=user"
 
   validates_attachment_content_type :profile_picture,
     content_type: /\Aimage\/.*\z/
