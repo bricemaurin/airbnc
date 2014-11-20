@@ -21,14 +21,18 @@
     <%= f.text_area :description, class: "form-control" %>
   </div>
 
-  <div class="field form-group">
-    <%= f.label :address %><br>
-    <%= f.text_field :address, class: "form-control" %>
+  <div class="col-xs-8">
+    <div class="field form-group">
+      <%= f.label :address %><br>
+      <%= f.text_field :address, class: "form-control", id:"user_input_autocomplete_address" %>
+    </div>
   </div>
 
-  <div class="field form-group">
-    <%= f.label :city %><br>
-    <%= f.text_field :city, class: "form-control" %>
+  <div class="col-xs-4">
+    <div class="field form-group">
+      <%= f.label :city %><br>
+      <%= f.text_field :city, class: "form-control", id:"locality", disabled: true %>
+    </div>
   </div>
 
   <div class="col-xs-4">

@@ -1,18 +1,20 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  after_create :send_welcome_email
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [ :facebook ]
 
   has_attached_file :profile_picture,
-    styles: { profile: "200x200>", flat: "90x90>", list: "60x60>", nav: "30x30>" }
+    styles: { profile: "200x200#", flat: "90x90#", list: "60x60#", nav: "30x30#" }, :default_url => "http://placehold.it/200&text=user"
 
   validates_attachment_content_type :profile_picture,
     content_type: /\Aimage\/.*\z/
 
   has_many :flats
-
+  has_many :bookings, dependent: :destroy
 
   def self.find_for_facebook_oauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -25,6 +27,12 @@ class User < ActiveRecord::Base
       user.token = auth.credentials.token
       user.token_expiry = Time.at(auth.credentials.expires_at)
     end
+  end
+
+  private
+
+  def send_welcome_email
+    UserMailer.welcome(self).deliver
   end
 
 end
