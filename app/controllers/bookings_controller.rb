@@ -31,7 +31,7 @@ class BookingsController < ApplicationController
     if @booking.update(booking_params)
       @booking.price = params[:booking][:number_of_day].to_i * @flat.price
       @booking.save
-      redirect_to @flat, notice: 'Booking was successfully updated.'
+      redirect_to profiles_index_path, notice: 'Booking was successfully updated.'
     else
       render :edit, notice: 'An error occurred, please try again.'
     end
