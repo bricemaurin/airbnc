@@ -27,6 +27,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    addressable (2.3.6)
     arel (5.0.1.20140414130214)
     aws-sdk (1.59.0)
       aws-sdk-v1 (= 1.59.0)
@@ -42,6 +43,7 @@ GEM
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.1.0)
       sass (~> 3.2)
+    bootstrap_form (2.2.0)
     builder (3.2.2)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -86,6 +88,10 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.1)
     jwt (1.0.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    letter_opener (1.2.0)
+      launchy (~> 2.2)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mime-types (2.4.3)
@@ -189,6 +195,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass (~> 3.3.0)
+  bootstrap_form
   coffee-rails (~> 4.0.0)
   devise
   faker
@@ -197,6 +204,7 @@ DEPENDENCIES
   google-webfonts
   jbuilder (~> 2.0)
   jquery-rails
+  letter_opener
   omniauth-facebook
   paperclip
   pg
