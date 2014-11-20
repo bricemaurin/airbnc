@@ -13,6 +13,9 @@ class BookingsController < ApplicationController
 
   def create
     @booking = current_user.bookings.new(booking_params)
+    @booking.flat = @flat
+    @booking.price = params[:booking][:number_of_day].to_i * @flat.price
+    @booking.status = false
 
     if @booking.save
       redirect_to @flat, notice: 'Booking complete, the owner will soon contact you !'
@@ -26,6 +29,8 @@ class BookingsController < ApplicationController
 
   def update
     if @booking.update(booking_params)
+      @booking.price = params[:booking][:number_of_day].to_i * @flat.price
+      @booking.save
       redirect_to @flat, notice: 'Booking was successfully updated.'
     else
       render :edit, notice: 'An error occurred, please try again.'
@@ -39,7 +44,7 @@ class BookingsController < ApplicationController
 
 private
   def booking_params
-    params.require(:booking).permit(:price, :status, :flat_id, :number_of_day)
+    params.require(:booking).permit(:number_of_day)
   end
 
   def set_booking
