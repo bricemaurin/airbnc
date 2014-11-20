@@ -27,6 +27,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    addressable (2.3.6)
     arel (5.0.1.20140414130214)
     aws-sdk (1.59.0)
       aws-sdk-v1 (= 1.59.0)
@@ -74,6 +75,7 @@ GEM
       thor (~> 0.14)
     font-awesome-rails (4.2.0.0)
       railties (>= 3.2, < 5.0)
+    geocoder (1.2.6)
     google-webfonts (0.2.0)
       actionpack (>= 3.0.0)
     hashie (3.3.1)
@@ -87,6 +89,10 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.1)
     jwt (1.0.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    letter_opener (1.2.0)
+      launchy (~> 2.2)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mime-types (2.4.3)
@@ -196,9 +202,11 @@ DEPENDENCIES
   faker
   figaro
   font-awesome-rails
+  geocoder
   google-webfonts
   jbuilder (~> 2.0)
   jquery-rails
+  letter_opener
   omniauth-facebook
   paperclip
   pg
