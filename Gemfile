@@ -47,3 +47,4 @@ gem 'paperclip'
 gem "geocoder"
 gem "gmaps4rails"
 gem "rails-assets-underscore"
+gem "simple_calendar", "~> 1.1.0"

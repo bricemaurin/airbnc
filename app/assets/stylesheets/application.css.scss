@@ -141,3 +141,23 @@ body {
 #profilepage {
   margin-top: 60px;
 }
+
+.calendar {
+  margin: 20px;
+}
+
+.day {
+  border: 1px solid black;
+  height: 35px;
+  width: 35px;
+}
+
+.day.past, .day.booked.past {
+  background: #EEE;
+  color: black;
+}
+
+.day.booked {
+  background: #e1222d;
+  color: white;
+}

@@ -86,11 +86,9 @@
         </div>
       </div>
       <div class="col-xs-12 calendar">
-        <!--
-        <div style="background-color:red;height:100px;">
-          ADD CALENDAR HERE
-        </div>
-        -->
+        <%= month_calendar do |date| %>
+          <%= date.day %>
+        <% end %>
       </div>
     </div>
   </div>
