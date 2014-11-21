@@ -1,68 +1,81 @@
-<div class="container">
-  <div class="col-xs-2">
-    <div class="img-fit">
-      <%= image_tag @user.profile_picture %><br>
-      <div class="edit-profile text-center"><%= link_to "edit profile", edit_user_registration_path, class:"btn btn-default" %></div>
+<div id="profilepage">
+  <div class="container">
+    <div class="col-xs-2">
+      <div class="img-fit">
+        <%= image_tag @user.profile_picture %>
+      </div>
+      <h1>
+        <%= @user.firstname %> <%= @user.lastname %>
+      </h1>
+      <p><%= @user.introduction %></p>
+      <div class="edit-profile text-left"><i class="fa fa-pencil-square-o"></i> <%= link_to "edit profile", edit_user_registration_path %></div>
+
+    </div>
+
+    <div class="col-xs-7">
+      <% if @user.bookings.count > 0 && @user.flats.count > 0 %>
+      <div role="tabpanel">
+        <ul class="nav nav-tabs" role="tablist">
+          <% if @user.bookings.count > 0 %>
+          <li role="presentation" class="active"><a href="#mybookings" aria-controls="mybookings" role="tab" data-toggle="tab">My Bookings</a></li>
+          <% end %>
+          <% if @user.flats.count > 0 %>
+          <li role="presentation"><a href="#myflats" aria-controls="myflats" role="tab" data-toggle="tab">My Flats</a></li>
+          <% end %>
+        </ul>
+        <% end %>
+
+        <div class="tab-content">
+          <% if @user.bookings.count > 0 %>
+          <% end %>
+          <% @user.bookings.each do |booking| %>
+          <div role="tabpanel" id="mybookings" class="row booking-details tab-pane active">
+            <div class="col-xs-4 img-fit">
+              <% if booking.flat.flat_pictures %>
+              <%= link_to image_tag(booking.flat.flat_pictures.first.photo(:list)), flat_path(booking.flat.id) %>
+              <% else %>
+              <%= image_tag current_user.profile_picture.url %>
+              <% end %>
+            </div>
+            <div class="col-xs-8 booking-details">
+              <h3>
+                <%= link_to booking.flat.title, flat_path(booking.flat.id) %>
+              </h3>
+              <%= booking.flat.address %><br>
+              Number of days : <%= booking.number_of_day %> <br>
+              <i class="fa fa-pencil-square-o"></i> <%= link_to "Edit Booking", edit_flat_booking_path(booking.flat.id, booking.id), class:"edit-booking-btn" %>
+            </div>
+          </div>
+          <% end %>
+
+          <% if @user.flats %>
+          <% end %>
+
+          <% @user.flats.each do |flat| %>
+          <div role="tabpanel" id="myflats" class="row booking-details tab-pane active">
+            <div class="col-xs-4 img-fit">
+              <% if flat.flat_pictures %>
+              <%= link_to image_tag(flat.flat_pictures.first.photo(:list)), flat_path(flat.id) %>
+              <% else %>
+              <%= image_tag "http://placehold.it/250x250/95a5a6/ecf0f1&text=no+image" %>
+              <% end %>
+            </div>
+            <div class="col-xs-8 booking-details">
+              <h3>
+                <%= link_to flat.title, flat_path(flat.id) %>
+              </h3>
+              <%= flat.address %><br>
+              <% if flat.bookings.count > 0 %>
+              <h4>Bookings</h4>
+              <% flat.bookings.each do |booking| %>
+              Booked <%= booking.number_of_day %> day by <%= booking.user.firstname %> <%= booking.user.lastname %> <br>
+              <% end %>
+              <% end %>
+            </div>
+          </div>
+
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
-
-  <div class="col-xs-7">
-    <h1>
-      <%= @user.firstname %> <%= @user.lastname %>
-    </h1>
-
-    <hr>
-    <p><%= @user.introduction %></p>
-
-    <% if @user.bookings.count > 0 %>
-      <h2>My Bookings</h2>
-    <% end %>
-    <% @user.bookings.each do |booking| %>
-      <div class="row booking-details">
-        <div class="col-xs-4 img-fit">
-          <% if booking.flat.flat_pictures %>
-            <%= link_to image_tag(booking.flat.flat_pictures.first.photo(:list)), flat_path(booking.flat.id) %>
-          <% else %>
-            <%= image_tag current_user.profile_picture.url %>
-          <% end %>
-        </div>
-        <div class="col-xs-8 booking-details">
-          <h3>
-            <%= link_to booking.flat.title, flat_path(booking.flat.id) %>
-          </h3>
-          <%= booking.flat.address %><br>
-          Number of days : <%= booking.number_of_day %> <br>
-          <%= link_to "Edit Booking", edit_flat_booking_path(booking.flat.id, booking.id), class:"edit-booking-btn" %>
-        </div>
-      </div>
-    <% end %>
-
-    <% if @user.flats %>
-      <h2>My Flats</h2>
-    <% end %>
-
-    <% @user.flats.each do |flat| %>
-      <div class="row booking-details">
-        <div class="col-xs-4 img-fit">
-          <% if flat.flat_pictures %>
-            <%= link_to image_tag(flat.flat_pictures.first.photo(:list)), flat_path(flat.id) %>
-          <% else %>
-            <%= image_tag "http://placehold.it/250x250/95a5a6/ecf0f1&text=no+image" %>
-          <% end %>
-        </div>
-        <div class="col-xs-8 booking-details">
-          <h3><%= flat.title %></h3>
-          <%= flat.address %><br>
-          <% if flat.bookings.count > 0 %>
-            <h4>Bookings</h4>
-            <% flat.bookings.each do |booking| %>
-            Booked <%= booking.number_of_day %> day by <%= booking.user.firstname %> <%= booking.user.lastname %> <br>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-
-    <% end %>
-
-  </div>
-</div>

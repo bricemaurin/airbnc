@@ -4,7 +4,6 @@
     <div class="page-header">
       <h1>Edit <%= resource_name.to_s.humanize %></h1>
     </div>
-    <%= render "devise/shared/facebookconnect" %>
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true}) do |f| %>
         <%= devise_error_messages! %>
