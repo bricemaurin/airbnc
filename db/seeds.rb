@@ -6,25 +6,24 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-10.times.each do
+10.times.each do |i|
   user = User.create!(
     firstname: Faker::Name.first_name,
     lastname: Faker::Name.last_name,
-    email: Faker::Internet.email,
-    password: Faker::Internet.password,
+    email: "user#{i}@gmail.com",
+    password: "password#{i}",
     introduction:Faker::Lorem.paragraph,
-    picture:("http://placehold.it/400x400")
-    )
+    picture:Faker::Avatar.image
+  )
 
   user.flats.create!(
     title: Faker::Lorem.sentence,
     description: Faker::Lorem.paragraph,
     address: Faker::Address.street_address,
-    city: Faker::Address.city,
     price: Faker::Number.number(2),
-    room_number: Faker::Number.digit,
-    bed_number: Faker::Number.digit,
-    guest_number: Faker::Number.digit
-    )
+    room_number: (1..4).to_a.sample,
+    bed_number: (1..4).to_a.sample,
+    guest_number: (1..4).to_a.sample
+  )
 end
 

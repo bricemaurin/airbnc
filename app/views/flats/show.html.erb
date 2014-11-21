@@ -1,3 +1,7 @@
+<% content_for(:title) do %>
+  <%= "#{@flat.title} in #{@flat.city} - AIRDMC" %>
+<% end %>
+
 <div class="container-fluid full-image">
   <div class="row">
     <div class="col-xs-12">
@@ -13,8 +17,10 @@
 <div class="container">
     <div class="col-xs-2">
         <div class="user">
-          <%= image_tag "http://api.randomuser.me/portraits/men/3.jpg", alt:"AJOUTER UNE BALISE ALT" %><br>
-          <div class="username"><%= @flat.user.email %></div>
+          <%= image_tag @flat.user.profile_picture, alt:"AJOUTER UNE BALISE ALT" %><br>
+          <div class="username text-center">
+            <%= @flat.user.firstname %> <%= @flat.user.lastname[0] %>.
+          </div>
         </div>
       </div>
 
@@ -32,19 +38,19 @@
 
       <div class="row">
         <div class="col-xs-4">
-          <div class="guests">
+          <div class="guests text-center">
             <%= image_tag "people.png", alt:"number of people in this flat" %><br>
             <%= @flat.guest_number %> guests
           </div>
         </div>
         <div class="col-xs-4">
-          <div class="rooms">
+          <div class="rooms text-center">
             <%= image_tag "rooms.png", alt:"number of rooms in this flat" %><br>
             <%= @flat.bed_number %> rooms
           </div>
         </div>
         <div class="col-xs-4">
-          <div class="beds">
+          <div class="beds text-center">
             <%= image_tag "beds.png", alt:"number of beds in this flat" %><br>
             <%= @flat.room_number %> beds
           </div>
@@ -76,11 +82,15 @@
       <div class="col-xs-8 col-xs-offset-2 book">
         <%= link_to "BOOK NOW", new_flat_booking_path(@flat), class:"btn-dmc" %>
         <div class="price">
-          <%= @flat.price %>€ par nuit
+          <span class="pricetag"><%= @flat.price %>€</span> par nuit
         </div>
       </div>
       <div class="col-xs-12 calendar">
-        <div style="background-color:red;height:100px;"> ADD CALENDAR HERE </div>
+        <!--
+        <div style="background-color:red;height:100px;">
+          ADD CALENDAR HERE
+        </div>
+        -->
       </div>
     </div>
   </div>
