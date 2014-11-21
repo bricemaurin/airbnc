@@ -23,6 +23,9 @@
   font-size: 20px;
   color: grey;
   margin-top: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .city-flat-list {

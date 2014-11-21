@@ -13,7 +13,7 @@
 
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 .second-image > img{
@@ -123,7 +123,11 @@ body {
 }
 
 .booking-details {
-  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.booking-details h3 {
+  margin-top: 0px;
 }
 
 .edit-profile {
@@ -132,4 +136,8 @@ body {
 
 .price {
   margin-top: 10px;
+}
+
+#profilepage {
+  margin-top: 60px;
 }

@@ -45,3 +45,8 @@ function onPlaceChanged() {
 $(function() {
   initializeAutocomplete('user_input_autocomplete_address');
 });
+
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
