@@ -22,8 +22,49 @@
   <% if @flats %>
     <% @flats.each do |flat| %>
       <div class="col-sm-6 col-md-4 listing-max">
-        <%= render "shared/flatlistimage", flat: flat %>
+        <div class="grid">
+          <figure class="effect-zoe">
+            <%= render "shared/flatlistimage", flat: flat %>
+            <figcaption>
+              <h2>Visit <span><%= flat.city %></span></h2>
+              <!-- <p class="icon-links">
+                <a href="#"><i class="fa fa-heart"></i></a>
+                <a href="#"><i class="fa fa-heart"></i></a>
+                <a href="#"><i class="fa fa-heart"></i></span></a>
+              </p> -->
+              <p class="description"><%= flat.title%></p>
+            </figcaption>
+          </figure>
+        </div>
       </div>
     <% end %>
   <% end %>
 </div>
+
+
+
+<!-- <div class="container home-listing">
+  <
+  % if @flats %
+  >
+    <
+    % @flats.each do |flat| %
+    >
+      <div class="col-sm-6 col-md-4 listing-max">
+        <
+        %= render "shared/flatlistimage", flat: flat %
+        >
+      </div>
+    <
+    % end %
+    >
+  <
+  % end %
+  >
+</div> -->
+
+
+
+
+
+
